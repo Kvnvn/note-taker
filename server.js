@@ -48,6 +48,25 @@ app.post("/api/notes", (req, res) => {
     });
 
 });
+// // add a route which takes a url parameter
+app.delete("/api/notes/:id", (req, res) => {
+    const pathJSON = path.join(__dirname, "/db/db.json")
+    let deleteIndex;
+
+    noteList.forEach(note => {
+        if (note.id.toString() === req.params.id)
+            deleteIndex = note.id
+    });
+    if (deleteIndex === -1) {
+        return res.sendStatus(404);
+    }
+    noteList.splice(deleteIndex, 1);
+    fs.writeFileSync(pathJSON, JSON.stringify(noteList), (err) => {
+        if (err)
+            throw (err);
+    });
+    return res.sendStatus(200);
+});
 
 // Starts the server to begin listening
 app.listen(PORT, () => {
