@@ -31,6 +31,8 @@ In this last photo, you see a display with one of my "bye" data is gone due to c
 
 ## Questions
 ![Kvnvn avatar](https://avatars3.githubusercontent.com/u/60084108?v=4)
+
+
 If you have any questions about the repo, open an issue or contact me at kevinvunguyen95@gmail.com
 if you want to see more of my GitHub: https://github.com/Kvnvn
 
